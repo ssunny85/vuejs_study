@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Quiz</title>
+</head>
+<body>
+<div id="app">
+    <sibling-component v-bind:propsdata="anotherMessage"></sibling-component>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+<script>
+//TODO 1. 전역 컴포넌트 등록하기
+Vue.component('sibling-component', {
+    template: '<div>전역 컴포넌트 영역입니다. {{propsdata}}</div>',
+    props: ['propsdata']
+});
+
+//TODO 2. 데이터 속성 추가하기
+var app = new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello ssunny! passed from Parent Component',
+        anotherMessage: 'Hello!! another message'
+    }
+});
+
+//TODO 3. 하위컴포넌트 등록하기
+
+</script>
+</body>
+</html>

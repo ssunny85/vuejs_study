@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>자식 컴포넌트로 데이터 전달하기</title>
+</head>
+<body>
+<div id="app">
+    <p style="border:1px solid #f00;">{{message}}</p>
+    <child-component v-bind:propsdata="message"></child-component>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+<script>
+Vue.component('child-component', {
+    template: '<p>{{propsdata}}</p>',
+    props: ['propsdata']
+});
+
+new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello Vue! passed from Parent Component'
+    }
+})
+
+
+</script>
+</body>
+</html>

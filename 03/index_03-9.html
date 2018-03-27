@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>부모로 데이터 전달하기</title>
+</head>
+<body>
+<div id="app">
+    <child-component v-on:show-log="printText"></child-component>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+<script>
+Vue.component('child-component', {
+    template: '<button type="button" v-on:click="showLog">show</button>',
+    methods: {
+       showLog: function() {
+           this.$emit('show-log');
+       }
+    }
+});
+
+new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello!! passed from Parent Component'
+    },
+    methods: {
+        printText: function() {
+            console.log('received an event');
+        }
+    }
+});
+</script>
+</body>
+</html>
