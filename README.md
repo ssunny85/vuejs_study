@@ -15,7 +15,7 @@
 ### Chapter04. 뷰 라우터
 - 라우팅: 웹 페이지간의 이동 방법
 ```
-<router-link to:'url'></rounter-link>
+<router-link to:'url'></router-link>
 <router-view></rounter-view>
 ```
 
