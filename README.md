@@ -46,6 +46,7 @@
     axios.post('url주소').then().catch();
     axios({
         method: 'get',
+
         url: 'url주소',
         ....
     });
@@ -53,3 +54,14 @@
 
 *Promise기반의 API형식
 : 데이터를 요청하고 받아올 때까지 기다렸다가 화면에 나타내는 로직을 실행할 때 주로 Promise 활용
+
+
+### Chapter05. 뷰 템플릿
+- HTML, CSS등 마크업 속성과 뷰 인스턴스에서 정의한 데이터 및 로직들을 연결해서 사용자가 화면에서 볼 수있는 형태의 HTML로 변환하는 속성
+- 디렉티브
+    - v-if : 참/거짓에 따라 태그 자체를 화면에 표시하거나 표시하지 않는다
+    - v-for : 뷰 데이터의 갯수만큼 태그 반복 출력
+    - v-bind : HTML태그 기본 속성과 데이터 속성 연결
+    - v-show : v-if와 유사(css효과의 display:none/block)
+    - v-on : 이벤트를 감지하여 특정 메소드 실행
+    - v-model : form에서 사용. 데이터 값을 동기화
