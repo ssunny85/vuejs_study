@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Axios</title>
+</head>
+<body>
+<div id="app">
+    <button type="button" v-on:click="getData">프레임워크 목록 가져오기</button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+<script>
+new Vue({
+    el: '#app',
+    methods: {
+        getData: function() {
+            axios.get('https://raw.githubusercontent.com/joshua1988/doit-vuejs/master/data/demo.json')
+                .then(function(response) {
+                   console.log(response);
+                });
+        }
+    }
+})
+</script>
+</body>
+</html>

@@ -19,6 +19,7 @@
 <router-view></router-view>
 ```
 
+#### Chapter04-1. 뷰 라우터
 - Nested Router
     - 상위 컴포넌트 1개에 하위 컴포넌트 1개를 포함하는 구조
     - 최상위 컴포넌트에 <router-view>포함
@@ -27,3 +28,21 @@
     - name속성 지정. name속성은 component와 연결하기 위함
     - name속성이 없는 경우 default
 
+#### Chapter04-2. HTTP통신
+- 뷰 리소스
+- 엑시오스(Axios)
+    - 현재 뷰 커뮤니티에서 가장 많이 사용하는 HTTP 통신 라이브러리
+    - Promise기반의 API형식이 다양하게 제공
+
+    ```
+    axios.get('url주소').then().catch();
+    axios.post('url주소').then().catch();
+    axios({
+        method: 'get',
+        url: 'url주소',
+        ....
+    });
+    ```
+
+*Promise기반의 API형식
+: 데이터를 요청하고 받아올 때까지 기다렸다가 화면에 나타내는 로직을 실행할 때 주로 Promise 활용
