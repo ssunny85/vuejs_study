@@ -12,4 +12,18 @@
     - 자식컴포넌트에서 부모 컴포넌트로 이벤트 전달
     - 이벤트 버스
 
+### Chapter04. 뷰 라우터
+- 라우팅: 웹 페이지간의 이동 방법
+```
+<router-link to:'url'></rounter-link>
+<router-view></rounter-view>
+```
+
+- Nested Router
+    - 상위 컴포넌트 1개에 하위 컴포넌트 1개를 포함하는 구조
+    - 최상위 컴포넌트에 <router-view>포함
+- Named View Rputer
+    - 같은 레베에서 여러개의 컴포넌트를 한번에 표시할 수 있음
+    - name속성 지정. name속성은 component와 연결하기 위함
+    - name속성이 없는 경우 default
 

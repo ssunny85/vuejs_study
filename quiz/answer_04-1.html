@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Quiz</title>
+</head>
+<body>
+<div id="app">
+    <router-view name="header"></router-view>
+    <router-view></router-view>
+    <router-view name="footer"></router-view>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.js"></script>
+<script>
+var Header = {template: '<div>Header</div>'};
+var Body = {template: '<div>Body</div>'};
+var Footer = {template: '<div>Footer</div>'};
+
+//TODO 1. /login 으로 url 변경되었을 때 동작할 컴포넌트 정의
+var LoginHeader = {template: '<div>LoginHeader</div>'};
+var LoginBody = {template: '<div>LoginBody</div>'};
+var LoginFooter = {template: '<div>LoginFooter</div>'};
+
+//TODO 2. /login 라우팅 추가
+var router = new VueRouter({
+   routes: [
+       {
+           path: '/',
+           components: {
+               header: Header,
+               default: Body,
+               footer: Footer
+           }
+       },
+       {
+           path: '/login',
+           components: {
+               header: LoginHeader,
+               default: LoginBody,
+               footer: LoginFooter
+           }
+       }
+   ]
+});
+
+var app = new Vue({
+    router
+}).$mount('#app');
+</script>
+</body>
+</html>

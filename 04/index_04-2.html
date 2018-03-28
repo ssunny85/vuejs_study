@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Nested Router</title>
+</head>
+<body>
+<div id="app">
+    <router-view></router-view>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.js"></script>
+<script>
+var User = {
+    template: `
+        <div>
+            User Component
+            <router-view></router-view>
+        </div>
+    `
+};
+var UserProfile = {template: '<p>User Profile</p>'};
+var UserPost = {template: '<p>User Port</p>'};
+
+var routes = [
+    {
+        path: '/user',
+        component: User,
+        children: [
+            {
+                path: 'posts',
+                component: UserPost
+            },
+            {
+                path: 'profile',
+                component: UserProfile
+            }
+        ]
+    }
+];
+
+var router = new VueRouter({
+   routes
+});
+
+var app = new Vue({
+    router
+}).$mount('#app');
+
+</script>
+</body>
+</html>

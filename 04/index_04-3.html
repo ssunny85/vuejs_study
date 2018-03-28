@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Named View Router</title>
+</head>
+<body>
+<div id="app">
+    <router-view name="header"></router-view>
+    <router-view></router-view>
+    <router-view name="footer"></router-view>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.js"></script>
+<script>
+var Body = {template: '<div>Body</div>'};
+var Header = {template: '<div>Header</div>'};
+var Footer = {template: '<div>Footer</div>'};
+
+var router = new VueRouter({
+   routes: [
+       {
+           path: '/',
+           components: {
+               default: Body,
+               header: Header,
+               footer: Footer
+           }
+       }
+   ]
+});
+
+var app = new Vue({
+   router
+}).$mount('#app');
+</script>
+</body>
+</html>
