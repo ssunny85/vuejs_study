@@ -16,7 +16,7 @@
 - 라우팅: 웹 페이지간의 이동 방법
 ```
 <router-link to:'url'></router-link>
-<router-view></rounter-view>
+<router-view></router-view>
 ```
 
 - Nested Router
