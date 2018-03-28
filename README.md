@@ -22,7 +22,7 @@
 - Nested Router
     - 상위 컴포넌트 1개에 하위 컴포넌트 1개를 포함하는 구조
     - 최상위 컴포넌트에 <router-view>포함
-- Named View Rputer
+- Named View Router
     - 같은 레베에서 여러개의 컴포넌트를 한번에 표시할 수 있음
     - name속성 지정. name속성은 component와 연결하기 위함
     - name속성이 없는 경우 default
