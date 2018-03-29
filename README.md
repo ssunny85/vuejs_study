@@ -57,7 +57,8 @@
 : 데이터를 요청하고 받아올 때까지 기다렸다가 화면에 나타내는 로직을 실행할 때 주로 Promise 활용
 
 
-### Chapter05. 뷰 템플릿
+### Chapter05. 뷰 프로젝트
+#### Chapter05-1. 뷰 템플릿
 - HTML, CSS등 마크업 속성과 뷰 인스턴스에서 정의한 데이터 및 로직들을 연결해서 사용자가 화면에서 볼 수있는 형태의 HTML로 변환하는 속성
 - 디렉티브
     - v-if : 참/거짓에 따라 태그 자체를 화면에 표시하거나 표시하지 않는다
@@ -69,4 +70,13 @@
 - computed vs methods
     - computed: 대상 데이터 값이 변경되면 자동으로 수행(캐싱하고있음)
     - methods: 호출할 때만 실행
+
+#### Chapter05-2. 뷰 프로젝트 구성방법
+1. 뷰 CLI 설치 : npm install vue-cli -g
+2. 프로젝트 생성
+    1. 프로젝트 폴더 생성
+    2. 생성한 폴더에서 실행 : vue init webpack-simple
+3. 관련 라이브러리 설치 : npm install
+4. 실행 : npm run dev
+
 
