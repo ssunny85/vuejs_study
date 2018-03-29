@@ -1,10 +1,16 @@
 <template>
   <div class="todo-footer">
-    <button type="button">Clear All</button>
+    <button type="button" v-on:click="removeAll">Clear All</button>
   </div>
 </template>
 <script>
 export default {
+  methods: {
+    removeAll() {
+      this.$emit('removeAll');
+      //console.log('clear all click');
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

@@ -1,11 +1,29 @@
 <template>
   <div class="todo-input">
-    <input type="text" placeholder="Type what you have to do" />
-    <button type="button" class="fa fa-plus"><span>추가</span></button>
+    <input type="text" v-model="newTodoItem" v-on:keyup.enter="addTodo" placeholder="Type what you have to do" />
+    <button type="button" v-on:click="addTodo" class="fa fa-plus"><span>추가</span></button>
   </div>
 </template>
 <script>
 export default {
+  data() {
+    return {
+      newTodoItem: ''
+    }
+  },
+  methods: {
+    addTodo() {
+      //console.log(this.newTodoItem); //확인용
+      if(this.newTodoItem !== '') {
+        var value = this.newTodoItem && this.newTodoItem.trim();
+        this.$emit('addTodo', value);
+        this.clearTodoInput();
+      }
+    },
+    clearTodoInput() {
+      this.newTodoItem = '';
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
