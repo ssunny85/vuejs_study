@@ -4,6 +4,7 @@
 ## Vue.js 입문
 - 2018.03.27 Chapter03 인스턴스 & 컴포넌트 (데이터 전달하기)
 - 2018.03.28 Chapter04 라우터 & HTTP통신
+- 2018.03.29 Chapter05-1 뷰 템플릿
 
 ### Chapter01. Vue.js
 - 웹 페이지 화면 개발을 위한 프레임워크
@@ -64,4 +65,8 @@
     - v-bind : HTML태그 기본 속성과 데이터 속성 연결
     - v-show : v-if와 유사(css효과의 display:none/block)
     - v-on : 이벤트를 감지하여 특정 메소드 실행
-    - v-model : form에서 사용. 데이터 값을 동기화
+    - v-model : form에서 사용. 데이터 값을 동기화 (양방향 데이터 바인딩)
+- computed vs methods
+    - computed: 대상 데이터 값이 변경되면 자동으로 수행(캐싱하고있음)
+    - methods: 호출할 때만 실행
+

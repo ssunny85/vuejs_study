@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>computed vs methods</title>
+</head>
+<body>
+<div id="app">
+    <p>{{anotherMessage}}</p> <!-- TODO 1. -->
+    <p v-bind:id="uid">uid값: {{uid}}</p>
+    <p v-if="flag">flag값: {{flag}}</p>
+    <button type="button" v-on:click="clickTodo">함수실행!!</button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+<script>
+var app = new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello Vue.js',
+
+        //TODO 1. 새로운 데이터 속성을 1개 추가하고, {{}}데이터바인을 이용해 화면에 표시
+        anotherMessage: 'Hello ssunny!!!',
+
+        uid: '10',
+
+        //TODO 2. uid를 변경하고 uid 변경여부 검사. p태그의 id검사
+        uid: '20',
+
+        flag: true
+
+        //TODO 4. flag값을 false로 변경했을 때 화면에 어떤 영향을 주는지 확인
+        //flag: false
+    },
+    methods: {
+        clickBtn() {
+            console.log('hi');
+        },
+
+        //TODO 3. eventMethod 하나를 추가하고 해당 이벤트를 실행하는 버튼 추가
+        clickTodo() {
+            console.log('TODO 3 해결!');
+        }
+    }
+});
+</script>
+</body>
+</html>
