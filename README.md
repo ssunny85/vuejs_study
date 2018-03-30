@@ -82,6 +82,6 @@
 - TODO 목록만들기 : /vue_todo/
 - 고도화
     - 할 일 목록 애니메이션 추가 : &lt;transition-group&gt; 태그 사용
-    - transition-group 사용 시 하위 태그에 v-bind:key 필수!! key값으로는 유일하게 구분되는 값 주기
+    - &lt;transition-group&gt; 사용 시 하위 태그에 **v-bind:key 필수!! key값으로는 유일하게 구분되는 값 주기**
 
 
