@@ -1,11 +1,11 @@
 <template>
   <section class="todo-list">
-    <ul>
-      <li v-for="(todoItem, index) in propsdata">
+    <transition-group name="list" tag="ul">
+      <li v-for="(todoItem, index) in propsdata" v-bind:key="todoItem">
         <span><i class="fa fa-check"></i>{{todoItem}}</span>
         <button type="button" class="fa fa-remove" v-on:click="removeTodo(todoItem, index)"><span>삭제</span></button>
       </li>
-    </ul>
+    </transition-group>
   </section>
 </template>
 <script>
@@ -72,5 +72,19 @@ export default {
       }
     }
   }
+}
+.list-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-move {
+  transition: transform 1s;
+}
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave {
+  opacity: 0;
+  transform: translateY(30px);
 }
 </style>

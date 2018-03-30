@@ -2,13 +2,23 @@
   <div class="todo-input">
     <input type="text" v-model="newTodoItem" v-on:keyup.enter="addTodo" placeholder="Type what you have to do" />
     <button type="button" v-on:click="addTodo" class="fa fa-plus"><span>추가</span></button>
+    <modal v-if="showModal" v-on:click="showModal = false">
+      <h3 slot="header">경고</h3>
+      <span slot="footer" v-on:click="showModal = false">
+        할 일을 입력하세요.
+        <i class="fa fa-times"></i>
+      </span>
+    </modal>
   </div>
 </template>
 <script>
+import Modal from './common/Modal.vue';
+
 export default {
   data() {
     return {
-      newTodoItem: ''
+      newTodoItem: '',
+      showModal: false
     }
   },
   methods: {
@@ -18,11 +28,16 @@ export default {
         var value = this.newTodoItem && this.newTodoItem.trim();
         this.$emit('addTodo', value);
         this.clearTodoInput();
+      } else {
+        this.showModal = !this.showModal;
       }
     },
     clearTodoInput() {
       this.newTodoItem = '';
     }
+  },
+  components: {
+    Modal: Modal
   }
 }
 </script>
