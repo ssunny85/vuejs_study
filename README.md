@@ -56,7 +56,6 @@
 *Promise기반의 API형식
 : 데이터를 요청하고 받아올 때까지 기다렸다가 화면에 나타내는 로직을 실행할 때 주로 Promise 활용
 
-
 ### Chapter05. 뷰 프로젝트
 #### Chapter05-1. 뷰 템플릿
 - HTML, CSS등 마크업 속성과 뷰 인스턴스에서 정의한 데이터 및 로직들을 연결해서 사용자가 화면에서 볼 수있는 형태의 HTML로 변환하는 속성
@@ -78,5 +77,11 @@
     2. 생성한 폴더에서 실행 : vue init webpack-simple
 3. 관련 라이브러리 설치 : npm install
 4. 실행 : npm run dev
+
+### Chapter06. 실전 어플리케이션 만들기
+- TODO 목록만들기 : /vue_todo/
+- 고도화
+    - 할 일 목록 애니메이션 추가 : <transition-group> 태그 사용
+    - transition-group 사용 시 하위 태그에 v-bind:key 필수!! key값으로는 유일하게 구분되는 값 주기
 
 
