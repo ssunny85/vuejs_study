@@ -8,6 +8,7 @@
 - 2018.03.29 Chapter06 TODO APP만들기
 - 2018.03.30 Chapter06 TODO APP 고도화
 - 2018.04.02 Chapter07 Vue.js 고급 개발자 되기
+- 2018.04.02 타 사이트 Vue.js이용하여 만들어보기
 
 ### Chapter01. Vue.js
 - 웹 페이지 화면 개발을 위한 프레임워크
