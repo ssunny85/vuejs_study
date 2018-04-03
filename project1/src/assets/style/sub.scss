@@ -1,0 +1,87 @@
+@import './src/assets/style/variable.scss';
+@import './src/assets/style/mixin.scss';
+@import './src/assets/style/reset.scss';
+@import './src/assets/style/layout.scss';
+
+//상세
+.header-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid $color-basic;
+
+  .logo > a {
+    color: $color-point;
+  }
+}
+.nav-wrap ul > li > a {
+  color: $color-dark;
+  font-weight: $normal;
+}
+
+.section-detail {
+  width: 100%;
+  padding-top: 64px;
+  @include box-sizing;
+}
+.detail-white {
+  background-color: #fff;
+}
+.detail-gray {
+  background-color: #f3f3f3;
+}
+.detail-inner {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+//banner
+.detail-banner {
+  position: relative;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+
+  button {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+
+    &:before {
+      font-size: 100px;
+    }
+  }
+}
+
+//상세 헤딩
+.detail-header {
+  padding-top: 30px;
+
+  .location {
+    display: inline-block;
+    margin-bottom:10px;
+    > a {
+      display: inline-block;
+      &::after {
+        content: '>';
+        display: inline-block;
+        margin-left: 3px;
+        padding-top: 1px;
+
+      }
+      &:hover,
+      &:focus {
+        color: $color-point;
+      }
+    }
+    > em {
+      color: #666;
+      font-style: normal;
+    }
+  }
+}
