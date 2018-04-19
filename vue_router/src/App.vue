@@ -157,7 +157,6 @@ a {
     vertical-align: middle;
     background: #fff;
   }
-
 }
 
 .footer-area {
