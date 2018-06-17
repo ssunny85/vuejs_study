@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="root">
+   
+        <h1>
+            {{ reverseMessage }} 
+        </h1>
+
+        <h2>All Tasks</h2>
+        <ul>
+            <li v-for="task in tasks">{{ task.description }}</li>
+        </ul>
+
+
+        <h2>Incomplete Tasks</h2>
+        <ul>
+            <li v-for="task in incompleteTasks">{{ task.description }}</li>
+        </ul>
+   
+    </div> 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+    
+    <script>
+    var app = new Vue({
+        el: '#root',
+        data: {
+            message: 'Hello World',
+            tasks: [
+                {description: 'Go to the store', completed: true},
+                {description: 'Finish screencast', completed: false},
+                {description: 'Make donation', completed: false},
+                {description: 'Clear inbox', completed: false},
+                {description: 'Make dinner', completed: false},
+                {description: 'Clean room', completed: true}
+            ]
+        },
+        computed: {
+            reverseMessage: function() {   
+                return this.message.split('').reverse().join('')
+            },
+
+            incompleteTasks: function() {
+                return this.tasks.filter(function(task) {
+                    return !task.completed;
+                });
+            }
+
+        }
+    })   
+    </script>
+
+</body>
+</html>
